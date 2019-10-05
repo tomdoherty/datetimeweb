@@ -50,3 +50,20 @@ spec:
     port: 7000
     targetPort: 7000
   type: NodePort
+
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: web
+spec:
+  selector:
+    app: web
+  ports:
+  - name: web
+    protocol: TCP
+    port: 7000
+    targetPort: 7000
+  type: LoadBalancer

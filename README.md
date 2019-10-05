@@ -2,23 +2,15 @@
 
 Messing about with Kubernetes as inspired by Chris Shiels
 
-## Kubernetes - Imperative
 
-    kubectl run date --image datetimeweb/date --replicas 3 --port 7001 --image-pull-policy Never
-    kubectl run time --image datetimeweb/time --replicas 3 --port 7002 --image-pull-policy Never
-    kubectl run web  --image datetimeweb/web --replicas 3 --port 7000 --image-pull-policy Never
+## Kubernetes - Declarative
 
-    kubectl expose deployment date --type=ClusterIP
-    kubectl expose deployment time --type=ClusterIP
-    kubectl expose deployment web  --type=NodePort
+    kubectl apply -f kubernetes/date.yml
+    kubectl apply -f kubernetes/time.yml
+    kubectl apply -f kubernetes/web.yml
 
-    kubectl expose deployment web --type=LoadBalancer --name=web-loadbalancer
-    kubectl get service web-loadbalancer
+    curl http://127.0.0.1:7000
 
-    kubectl delete deployment date
-    kubectl delete deployment time
-    kubectl delete deployment web
-    kubectl delete service date
-    kubectl delete service time
-    kubectl delete service web
-    kubectl delete service web-loadbalancer
+    kubectl delete -f kubernetes/date.yml
+    kubectl delete -f kubernetes/time.yml
+    kubectl delete -f kubernetes/web.yml
