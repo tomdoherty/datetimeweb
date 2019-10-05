@@ -1,0 +1,22 @@
+---
+
+version: '3'
+
+networks:
+  datetimeweb: {}
+
+services:
+  date:
+    image: datetimeweb/date
+    networks:
+      datetimeweb: {}
+  time:
+    image: datetimeweb/time
+    networks:
+      datetimeweb: {}
+  web:
+    image: datetimeweb/web
+    ports:
+      - 7000:7000
+    networks:
+      datetimeweb: {}
