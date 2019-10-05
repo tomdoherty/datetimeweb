@@ -19,6 +19,7 @@ spec:
       containers:
       - name: date
         image: datetimeweb/date:latest
+        imagePullPolicy: Never
         resources:
           requests:
             cpu: 100m
