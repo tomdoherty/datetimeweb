@@ -2,6 +2,12 @@
 
 Messing about with Kubernetes as inspired by Chris Shiels
 
+## Build
+
+    ( cd images/date/build/ ; make build )
+    ( cd images/time/build/ ; make build )
+    ( cd images/web/build/ ; make build )
+
 
 ## Kubernetes - Declarative
 
