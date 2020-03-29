@@ -18,8 +18,8 @@ spec:
     spec:
       containers:
       - name: web
-        image: datetimeweb/web:latest
-        imagePullPolicy: Never
+        image: server:5000/datetimeweb/web:latest
+        imagePullPolicy: IfNotPresent
         resources:
           requests:
             cpu: 100m
